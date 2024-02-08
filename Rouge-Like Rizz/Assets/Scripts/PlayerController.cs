@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class PlayerController : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class PlayerController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        isMoving = false;
+       
     }
 
     // Update is called once per frame
@@ -33,10 +34,13 @@ public class PlayerController : MonoBehaviour
     }
     IEnumerator Move(Vector3 targetPos)
     {
+        isMoving = true;
         while ((targetPos - transform.position).sqrMagnitude > Mathf.Epsilon) //while the movement input is greater than zero
         {
-            targetPos = Vector3.MoveTowards //pick up in second video of rpg tutorial
-
+            targetPos = Vector3.MoveTowards(transform.position, targetPos, moveSpeed * Time.deltaTime);
+            yield return null;
         }
+        transform.position = targetPos;
+        isMoving = false;
     }
 }
