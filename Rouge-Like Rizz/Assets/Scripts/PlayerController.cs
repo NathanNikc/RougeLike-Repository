@@ -14,6 +14,14 @@ public class PlayerController : MonoBehaviour
     {
         playerMovement.x = Input.GetAxisRaw("Horizontal");
         playerMovement.y = Input.GetAxisRaw("Vertical");
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            moveSpeed = 7.5f;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 5f;
+        }
     }
     void FixedUpdate() //will be called 50 times a second and not based on frames
     {
