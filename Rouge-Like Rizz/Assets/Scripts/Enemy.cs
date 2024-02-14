@@ -20,9 +20,9 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        distance = Vector2.Distance(transform.position, player.transform.position);
-        Vector2 direction = player.transform.position - transform.position;
+        distance = Vector3.Distance(transform.position, player.transform.position);
+        Vector3 direction = player.transform.position - transform.position;
 
-        transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
+        transform.position = Vector3.MoveTowards(this.transform.position, player.transform.position, moveSpeed * Time.deltaTime);
     }
 }
