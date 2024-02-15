@@ -10,6 +10,8 @@ public class Bullet: MonoBehaviour
     public Rigidbody2D rb;
     public Transform firePoint;
     private float bulletSpeed = 10f;
+    public Transform player;
+    public Transform FirePointHinge;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +27,7 @@ public class Bullet: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        FirePointHinge.transform.position = player.transform.position;
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePosition - rb.position;
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
