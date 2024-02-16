@@ -13,14 +13,11 @@ public class Enemy : MonoBehaviour
     private Vector2 movement;
     public int maxHealth = 100;
     public int currentHealth;
-    public EnemyHealth healthBar;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = this.GetComponent<Rigidbody2D>();
-        currentHealth = maxHealth;
-        healthBar.SetMaxHealth(maxHealth);
     }
 
     // Update is called once per frame

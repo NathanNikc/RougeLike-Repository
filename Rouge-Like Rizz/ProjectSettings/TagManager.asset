@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Enemy
   - Object
+  - DamageTaker
   layers:
   - Default
   - TransparentFX

@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bullet: MonoBehaviour
+public class BulletAim: MonoBehaviour
 {
     public GameObject bulletPrefab;
     private Vector2 mousePosition;
@@ -12,10 +12,11 @@ public class Bullet: MonoBehaviour
     private float bulletSpeed = 10f;
     public Transform player;
     public Transform FirePointHinge;
+
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>(); //rb variable gets rb of the hinge that the firepoint rotates around so the hinge can be told to follow the mouse. this is so the player doesnt rotate to move the firepoint, the invisable hinge does.
     }
 
     public void Fire()
