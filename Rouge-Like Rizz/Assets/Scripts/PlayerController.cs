@@ -10,6 +10,11 @@ public class PlayerController : MonoBehaviour
     public Rigidbody2D playerRb;
     Vector2 playerMovement;
 
+    void Start()
+    {
+
+    }
+
     void Update()
     {
         playerMovement.x = Input.GetAxisRaw("Horizontal");

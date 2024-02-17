@@ -22,11 +22,6 @@ public class EnemyHealthManager : MonoBehaviour
         {
             Destroy(enemy);
         }
-
-       //if (Input.GetKeyDown(KeyCode.C))  heal the player if you wanna
-       // {
-       //     Heal(5);
-      //  }
     }
 
     public void EnemyTakeDamage(float damage)
