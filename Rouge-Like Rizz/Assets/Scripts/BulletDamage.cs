@@ -7,6 +7,7 @@ public class BulletDamage : MonoBehaviour
 {
     private EnemyHealthManager takeDamageMeathod;
     public GameObject bullet;
+    private float bulletDamage = 50f;
 
     // Start is called before the first frame update
     public void Start()
@@ -24,7 +25,7 @@ public class BulletDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            takeDamageMeathod.EnemyTakeDamage(10f); //calls on TakeDamage Meathod based on collision between bullet and enemy
+            takeDamageMeathod.EnemyTakeDamage(bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
             Destroy(bullet);
         }
     }

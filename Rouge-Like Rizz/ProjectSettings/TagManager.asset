@@ -8,6 +8,7 @@ TagManager:
   - Object
   - DamageTaker
   - PlayerTakeDamage
+  - EnemyHealth
   layers:
   - Default
   - TransparentFX

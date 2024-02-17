@@ -8,22 +8,27 @@ public class Enemy : MonoBehaviour
 
     public float moveSpeed = .5f;
     private Rigidbody2D enemyRb;
-    public Transform player;
+    private GameObject player;
     private float distance;
     private Vector2 movement;
     public int maxHealth = 100;
     public int currentHealth;
+    private Transform playerTransform;
 
     // Start is called before the first frame update
     void Start()
     {
         enemyRb = this.GetComponent<Rigidbody2D>();
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.GetComponent<Transform>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        Vector3 direction = player.position - transform.position;
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerTransform = player.GetComponent<Transform>();
+        Vector3 direction = playerTransform.position - transform.position;
         direction.Normalize();
         movement = direction;
     }
