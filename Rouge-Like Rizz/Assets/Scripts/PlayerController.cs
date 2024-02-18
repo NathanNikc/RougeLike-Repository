@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
         playerMovement.x = Input.GetAxisRaw("Horizontal");
         playerMovement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.LeftShift))
+
         {
             moveSpeed = 7.5f;
         }
