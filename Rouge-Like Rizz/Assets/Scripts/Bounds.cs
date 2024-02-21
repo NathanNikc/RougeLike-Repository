@@ -18,6 +18,6 @@ public class Bounds : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-      transform.position = new Vector3(Mathf.Clamp(transform.position.x, leftBound, rightBound), Mathf.Clamp(transform.position.y, bottomBound, topBound), transform.position.z);
+      transform.position = new Vector2(Mathf.Clamp(transform.position.x, leftBound, rightBound), Mathf.Clamp(transform.position.y, bottomBound, topBound));
     }
 }

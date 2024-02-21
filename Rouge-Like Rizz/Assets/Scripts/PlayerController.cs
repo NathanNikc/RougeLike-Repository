@@ -8,11 +8,11 @@ public class PlayerController : MonoBehaviour
 
     public float moveSpeed = 5f;
     public Rigidbody2D playerRb;
-    Vector2 playerMovement;
+    public Vector2 playerMovement;
 
     void Start()
     {
-
+      
     }
 
     void Update()
@@ -29,8 +29,9 @@ public class PlayerController : MonoBehaviour
             moveSpeed = 5f;
         }
     }
-    void FixedUpdate() //will be called 50 times a second and not based on frames
+
+    public void FixedUpdate()
     {
-        playerRb.MovePosition(playerRb.position + playerMovement * moveSpeed * Time.fixedDeltaTime);
+        playerRb.MovePosition(playerRb.position + (playerMovement * moveSpeed * Time.fixedDeltaTime));
     }
 }
