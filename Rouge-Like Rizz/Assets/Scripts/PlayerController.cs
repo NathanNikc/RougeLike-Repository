@@ -7,12 +7,14 @@ public class PlayerController : MonoBehaviour
 {
 
     public float moveSpeed = 5f;
-    public Rigidbody2D playerRb;
-    public Vector2 playerMovement;
+    private Rigidbody2D playerRb;
+    private Vector2 playerMovement;
+    public PlayerHealthManager healCounter;
 
     void Start()
     {
-      
+        playerRb = GetComponent<Rigidbody2D>();
+        healCounter = GameObject.FindGameObjectWithTag("Healer").GetComponent<PlayerHealthManager>();
     }
 
     void Update()
@@ -33,5 +35,14 @@ public class PlayerController : MonoBehaviour
     public void FixedUpdate()
     {
         playerRb.MovePosition(playerRb.position + (playerMovement * moveSpeed * Time.fixedDeltaTime));
+    }
+
+    public void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "HealthPot")
+        {
+            healCounter.PickUpPot();
+            Destroy(other.gameObject);
+        }
     }
 }

@@ -9,6 +9,9 @@ TagManager:
   - DamageTaker
   - PlayerTakeDamage
   - EnemyHealth
+  - Obstacle
+  - HealthPot
+  - Healer
   layers:
   - Default
   - TransparentFX

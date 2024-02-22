@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
 {
+    [SerializeField]
+    public GameObject healthPot;
 
     public Image healthBar;
     public float healthAmount = 100f;
@@ -43,22 +45,23 @@ public class PlayerHealthManager : MonoBehaviour
         healthAmount -= damage;
         healthBar.fillAmount = healthAmount / 100f;
     }
-    
 
+    public void PickUpPot()
+    {
+        healCounter += 1;
+    }
 
-
-
-    //holds everything to do with healing
+    //holds almost-everything to do with healing
     public void HealMeathods()
     {
-
-        Debug.Log("You have " + healCounter + " heals!");
-
-        //placeholder for player picking up healing item
+        //spawn in health pot
         if (Input.GetKeyDown(KeyCode.M))
         {
-            healCounter += 1;
+            Instantiate(healthPot);
         }
+
+
+        Debug.Log("You have " + healCounter + " heals!");
 
         if (healCounter > 0)
         {

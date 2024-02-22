@@ -28,5 +28,9 @@ public class BulletDamage : MonoBehaviour
             takeDamageMeathod.EnemyTakeDamage(bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
             Destroy(bullet);
         }
+        else if (collision.gameObject.tag == "Obstacle")
+        {
+            Destroy(bullet);
+        }
     }
 }
