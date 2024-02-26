@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    public float moveSpeed = 5f;
+    private float moveSpeed = 3.5f;
     private Rigidbody2D playerRb;
     private Vector2 playerMovement;
     public PlayerHealthManager healCounter;
@@ -24,11 +24,11 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftShift))
 
         {
-            moveSpeed = 7.5f;
+            moveSpeed = 5f;
         }
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
-            moveSpeed = 5f;
+            moveSpeed = 3.5f;
         }
     }
 
