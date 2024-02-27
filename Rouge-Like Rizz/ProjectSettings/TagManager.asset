@@ -12,6 +12,7 @@ TagManager:
   - Obstacle
   - HealthPot
   - Healer
+  - BackgroundProp
   layers:
   - Default
   - TransparentFX
@@ -48,4 +49,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Ground
+    uniqueID: 3169675737
+    locked: 0
+  - name: UI
+    uniqueID: 55382373
     locked: 0
