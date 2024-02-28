@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour
 {
-    private float topBound = 4.4f;
-    private float bottomBound = -4.4f;
-    private float leftBound = -8.5f;
-    private float rightBound = 8.5f;
+    private float topBound = 4.3f;
+    private float bottomBound = -3.6f;
+    private float leftBound = -7.8f;
+    private float rightBound = 7.8f;
 
     // Start is called before the first frame update
     void Start()
