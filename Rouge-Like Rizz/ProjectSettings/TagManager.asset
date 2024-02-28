@@ -3,15 +3,7 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags:
-  - Enemy
-  - Object
-  - DamageTaker
-  - PlayerTakeDamage
-  - EnemyHealth
-  - Obstacle
-  - HealthPot
-  - Healer
+  tags: []
   layers:
   - Default
   - TransparentFX
@@ -48,10 +40,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 186572411
-    locked: 0
-  - name: UI
-    uniqueID: 4079541843
     locked: 0
