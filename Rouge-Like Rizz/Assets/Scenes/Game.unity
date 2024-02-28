@@ -178,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 186572411
+  m_SortingLayerID: -1375421755
   m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 25edf10617cfb4841a3d66bccb32a2ad, type: 3}
@@ -684,18 +684,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1440071490425556986, guid: 9eab200bb2ae59f46aa8e55de4b33aed, type: 3}
-      propertyPath: m_SortingLayer
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 1440071490425556986, guid: 9eab200bb2ae59f46aa8e55de4b33aed, type: 3}
-      propertyPath: m_SortingLayerID
-      value: -215425453
-      objectReference: {fileID: 0}
-    - target: {fileID: 3654913169703517616, guid: 9eab200bb2ae59f46aa8e55de4b33aed, type: 3}
-      propertyPath: m_IsTrigger
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7331845203096704340, guid: 9eab200bb2ae59f46aa8e55de4b33aed, type: 3}
       propertyPath: m_Name
       value: PickaxeEnemy
@@ -742,7 +730,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8740558267840464232, guid: 9eab200bb2ae59f46aa8e55de4b33aed, type: 3}
       propertyPath: m_SortingLayerID
-      value: -215425453
+      value: -1614979013
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -850,7 +838,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: -215425453
+  m_SortingLayerID: -1614979013
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!1 &1105125539
@@ -912,7 +900,7 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -215425453
+  m_SortingLayerID: -1614979013
   m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b5a21a89ff227884ea86572868079b73, type: 3}
