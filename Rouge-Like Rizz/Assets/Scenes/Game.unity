@@ -452,6 +452,18 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: c1b6419c266c0794ea4dd29f0f0c12d5, type: 3}
+    - target: {fileID: 777499974815839667, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 777499974815839667, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 777499974815839667, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2130675012177438383, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_Name
       value: HealthPot
