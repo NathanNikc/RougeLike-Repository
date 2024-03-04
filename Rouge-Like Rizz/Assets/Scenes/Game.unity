@@ -181,7 +181,7 @@ SpriteRenderer:
   m_SortingLayerID: -1375421755
   m_SortingLayer: 1
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: a1f03ad3fa15747438837444a5511254, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6362573f587f544d9c4eec7194c43f8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -434,8 +434,8 @@ Transform:
   m_GameObject: {fileID: 341639557}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.7887974, y: 0.802349, z: 1}
+  m_LocalPosition: {x: 0.17, y: 0.01, z: 0}
+  m_LocalScale: {x: 1.5503092, y: 1.4299572, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -453,20 +453,12 @@ PrefabInstance:
       value: HealthPot
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 1.1476686
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.1283033
-      objectReference: {fileID: 0}
-    - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.4367
+      value: 3.3567
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.1149
+      value: 3.0578
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.z
