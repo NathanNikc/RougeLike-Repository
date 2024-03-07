@@ -9,12 +9,13 @@ public class PlayerController : MonoBehaviour
     private float moveSpeed = 3.5f;
     private Rigidbody2D playerRb;
     private Vector2 playerMovement;
-    public PlayerHealthManager healCounter;
+    public PlayerHealthManager playerHealthMeathods;
+    public PlayerHealthManager ouchy;
 
     void Start()
     {
         playerRb = GetComponent<Rigidbody2D>();
-        healCounter = GameObject.FindGameObjectWithTag("Healer").GetComponent<PlayerHealthManager>();
+        playerHealthMeathods = GameObject.FindGameObjectWithTag("Healer").GetComponent<PlayerHealthManager>();
     }
 
     void Update()
@@ -41,8 +42,16 @@ public class PlayerController : MonoBehaviour
     {
         if (other.gameObject.tag == "HealthPot")
         {
-            healCounter.PickUpPot();
+            playerHealthMeathods.PickUpPot();
             Destroy(other.gameObject);
+        }
+    }
+
+    public void OnCollisionStay2D(Collision2D collision) //give player i-frames
+    {
+        if (collision.gameObject.tag == "Enemy")
+        {
+            playerHealthMeathods.TakeDamage(1f); //increase damage taken per hit after i-frames are applied
         }
     }
 }

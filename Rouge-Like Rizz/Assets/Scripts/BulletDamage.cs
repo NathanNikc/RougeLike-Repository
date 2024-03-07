@@ -7,7 +7,7 @@ public class BulletDamage : MonoBehaviour
 {
     private EnemyHealthManager takeDamageMeathod;
     public GameObject bullet;
-    private float bulletDamage = 50f;
+    private float bulletDamage = 20f;
 
     // Start is called before the first frame update
     public void Start()

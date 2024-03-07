@@ -24,12 +24,6 @@ public class PlayerHealthManager : MonoBehaviour
     void Update()
     {
         HealMeathods();
-
-        //placeholder for player getting hurt
-        if (Input.GetKeyDown(KeyCode.Mouse1))
-        {
-            TakeDamage(15f);
-        }
     }
 
     public void Heal(float healingAmount)
