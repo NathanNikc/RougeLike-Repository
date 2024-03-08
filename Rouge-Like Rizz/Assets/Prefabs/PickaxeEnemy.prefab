@@ -58,7 +58,7 @@ GameObject:
   - component: {fileID: 8604612420790310032}
   - component: {fileID: 5074189323904524115}
   - component: {fileID: 8426460370640514389}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyHealth
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 8740558267840464232}
   - component: {fileID: 7057037184599380282}
   - component: {fileID: 7390357265193995322}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -185,7 +185,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1614979013
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!114 &7057037184599380282
 MonoBehaviour:
@@ -238,7 +238,7 @@ GameObject:
   - component: {fileID: 4161140493757893787}
   - component: {fileID: 3103257166498568038}
   - component: {fileID: 4328118845917239333}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyRed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 3210594543694021485}
   - component: {fileID: 8328283162094761126}
   - component: {fileID: 3654913169703517616}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: PickaxeEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1614979013
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: -373590235, guid: e97d220546f7da34581056f11f45306e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -513,7 +513,7 @@ GameObject:
   - component: {fileID: 4319257641189778152}
   - component: {fileID: 5069592294040754335}
   - component: {fileID: 5852022758133096989}
-  m_Layer: 5
+  m_Layer: 0
   m_Name: EnemyBorder
   m_TagString: Untagged
   m_Icon: {fileID: 0}

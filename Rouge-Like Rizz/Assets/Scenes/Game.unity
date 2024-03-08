@@ -218,7 +218,7 @@ GameObject:
   - component: {fileID: 251811554}
   - component: {fileID: 251811556}
   - component: {fileID: 251811555}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Health
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,12 +303,20 @@ PrefabInstance:
       value: HealthPot
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2386148
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2962518
+      objectReference: {fileID: 0}
+    - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.3567
+      value: 3.4803
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.0578
+      value: 2.9201
       objectReference: {fileID: 0}
     - target: {fileID: 5739067193365524048, guid: 961a65862c981b14f8437b1f3ab13b09, type: 3}
       propertyPath: m_LocalPosition.z
@@ -547,7 +555,7 @@ GameObject:
   - component: {fileID: 920686808}
   - component: {fileID: 920686810}
   - component: {fileID: 920686809}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Border
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -680,7 +688,7 @@ GameObject:
   - component: {fileID: 970306871}
   - component: {fileID: 970306870}
   - component: {fileID: 970306869}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: PlayerHealthBar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +778,7 @@ Canvas:
   m_AdditionalShaderChannelsFlag: 0
   m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: -1614979013
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_TargetDisplay: 0
 --- !u!1 &1016701558
 GameObject:
@@ -817,7 +825,7 @@ GameObject:
   - component: {fileID: 1105125545}
   - component: {fileID: 1105125547}
   - component: {fileID: 1105125548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -863,7 +871,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1614979013
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: b5a21a89ff227884ea86572868079b73, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -885,8 +893,8 @@ Transform:
   m_GameObject: {fileID: 1105125539}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -5.52, y: 1.8, z: 0}
-  m_LocalScale: {x: 0.1530872, y: 0.16930105, z: 3.1567}
+  m_LocalPosition: {x: -5.4855, y: 1.7379, z: 0}
+  m_LocalScale: {x: 0.1652117, y: 0.19112396, z: 3.1567}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1297927168}
@@ -982,6 +990,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerHealthMeathods: {fileID: 0}
   ouchy: {fileID: 0}
+  iFrameDuration: 1
+  numberOfFlashes: 3
 --- !u!1 &1297927165
 GameObject:
   m_ObjectHideFlags: 0
@@ -993,7 +1003,7 @@ GameObject:
   - component: {fileID: 1297927168}
   - component: {fileID: 1297927167}
   - component: {fileID: 1297927166}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePointHinge
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1103,7 +1113,7 @@ GameObject:
   - component: {fileID: 1519868528}
   - component: {fileID: 1519868530}
   - component: {fileID: 1519868529}
-  m_Layer: 5
+  m_Layer: 6
   m_Name: Red
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1176,7 +1186,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1581251724}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1255,7 +1265,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1614979013
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 8d05fa911e0f86d49be8e7c38cbf0936, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1451,7 +1461,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2140716431}
   - component: {fileID: 2140716432}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerHealthManager
   m_TagString: Healer
   m_Icon: {fileID: 0}
