@@ -12,6 +12,7 @@ public class BulletAim: MonoBehaviour
     private float bulletSpeed = 10f;
     public Transform player;
     public Transform FirePointHinge;
+    private bool shotFired = false;
 
     // Start is called before the first frame update
     void Start()
@@ -34,9 +35,17 @@ public class BulletAim: MonoBehaviour
         float aimAngle = Mathf.Atan2(aimDirection.y, aimDirection.x) * Mathf.Rad2Deg - 90f;
         rb.rotation = aimAngle;
 
-        if (Input.GetKeyDown(KeyCode.Mouse0)) //if the player presses the left mouse button
+        if (Input.GetKeyDown(KeyCode.Mouse0) && shotFired == false) //if the player presses the left mouse button
         {
             Fire();
+            StartCoroutine(FireRate());
         }      
+    }
+
+    private IEnumerator FireRate()
+    {
+        shotFired = true;
+        yield return new WaitForSeconds(.85f);
+        shotFired = false;
     }
 }

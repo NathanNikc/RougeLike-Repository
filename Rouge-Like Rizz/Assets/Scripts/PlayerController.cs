@@ -6,7 +6,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
 
-    private float moveSpeed = 4.5f;
+    private float moveSpeed = 5f;
     private Rigidbody2D playerRb;
     private Vector2 playerMovement;
     public PlayerHealthManager playerHealthMeathods;
@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float iFrameDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
+    public float enemyDamage = 30f;
+    public float dashDowntime = 10f;
 
     void Start()
     {
@@ -27,16 +29,18 @@ public class PlayerController : MonoBehaviour
         playerMovement.x = Input.GetAxisRaw("Horizontal");
         playerMovement.y = Input.GetAxisRaw("Vertical");
         if (Input.GetKeyDown(KeyCode.LeftShift))
-
         {
-            moveSpeed = 6f;
-        }
-        else if (Input.GetKeyUp(KeyCode.LeftShift))
-        {
-            moveSpeed = 4.5f;
+            StartCoroutine(Dash());
         }
     }
 
+    private IEnumerator Dash()
+    {
+        moveSpeed = 10f;
+        yield return new WaitForSeconds(1f);
+        moveSpeed = 5f;
+        yield return new WaitForSeconds(dashDowntime);
+    }
     public void FixedUpdate()
     {
         playerRb.MovePosition(playerRb.position + (playerMovement * moveSpeed * Time.fixedDeltaTime));
@@ -55,7 +59,7 @@ public class PlayerController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            playerHealthMeathods.TakeDamage(15f); //increase damage taken per hit after i-frames are applied
+            playerHealthMeathods.TakeDamage(30f); //increase damage taken per hit after i-frames are applied
             StartCoroutine(Invulnerability());
         }
     }
