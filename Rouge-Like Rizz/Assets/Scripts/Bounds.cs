@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bounds : MonoBehaviour
 {
-    private float topBound = 4.3f;
+    private float topBound = 4.1f;
     private float bottomBound = -3.6f;
     private float leftBound = -7.8f;
     private float rightBound = 7.8f;
