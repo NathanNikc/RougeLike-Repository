@@ -11,11 +11,20 @@ public class PlayerController : MonoBehaviour
     private Vector2 playerMovement;
     public PlayerHealthManager playerHealthMeathods;
     public PlayerHealthManager ouchy;
+    public float enemyDamage = 30f;
+
+    [Header("I-Frames")]
     [SerializeField] private float iFrameDuration;
     [SerializeField] private int numberOfFlashes;
     private SpriteRenderer spriteRend;
-    public float enemyDamage = 30f;
-    public float dashDowntime = 10f;
+
+    [Header("DashSettings")]
+    [SerializeField] float dashSpeed = 50f;
+    [SerializeField] private TrailRenderer tr;
+    [SerializeField] float dashDuration = .3f;
+    [SerializeField] int dashCooldown = 3;
+    bool isDashing;
+  
 
     void Start()
     {
@@ -26,9 +35,14 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         playerMovement.x = Input.GetAxisRaw("Horizontal");
         playerMovement.y = Input.GetAxisRaw("Vertical");
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             StartCoroutine(Dash());
         }
@@ -36,13 +50,22 @@ public class PlayerController : MonoBehaviour
 
     private IEnumerator Dash()
     {
-        moveSpeed = 10f;
-        yield return new WaitForSeconds(1f);
-        moveSpeed = 5f;
-        yield return new WaitForSeconds(dashDowntime);
+        isDashing = true;
+        playerRb.velocity = new Vector2(playerMovement.x * dashSpeed, playerMovement.y * dashSpeed);
+        tr.emitting = true;
+        yield return new WaitForSeconds(dashDuration);
+        tr.emitting = false;
+        isDashing = false;
+        yield return new WaitForSeconds(dashCooldown);
     }
+
     public void FixedUpdate()
     {
+        if (isDashing)
+        {
+            return;
+        }
+
         playerRb.MovePosition(playerRb.position + (playerMovement * moveSpeed * Time.fixedDeltaTime));
     }
 
