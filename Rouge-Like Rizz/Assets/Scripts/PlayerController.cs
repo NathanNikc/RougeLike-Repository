@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public PlayerHealthManager playerHealthMeathods;
     public PlayerHealthManager ouchy;
     public float enemyDamage = 30f;
+    public Transform playerTransform;
 
     [Header("I-Frames")]
     [SerializeField] private float iFrameDuration;
@@ -28,6 +29,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        playerTransform = transform;
         spriteRend = GetComponent<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
         playerHealthMeathods = GameObject.FindGameObjectWithTag("Healer").GetComponent<PlayerHealthManager>();
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnCollisionStay2D(Collision2D collision) //give player i-frames
+    public void OnCollisionEnter2D(Collision2D collision) //give player i-frames
     {
         if (collision.gameObject.tag == "Enemy")
         {

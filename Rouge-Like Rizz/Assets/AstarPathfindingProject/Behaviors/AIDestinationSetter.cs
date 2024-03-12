@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using UnityEditor.Build;
 
 namespace Pathfinding {
 	/// <summary>
@@ -15,11 +16,20 @@ namespace Pathfinding {
 	[HelpURL("http://arongranberg.com/astar/docs/class_pathfinding_1_1_a_i_destination_setter.php")]
 	public class AIDestinationSetter : VersionedMonoBehaviour {
 		/// <summary>The object that the AI should move to</summary>
-		public Transform target;
-		IAstarAI ai;
 
-		void OnEnable () {
-			ai = GetComponent<IAstarAI>();
+		[SerializeField] public Transform target;
+		IAstarAI ai;
+		[SerializeField] public GameObject player;
+
+		void Start()
+		{
+            player = GameObject.Find("Player");
+            target = player.transform;
+        }
+
+        void OnEnable ()
+		{
+            ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
 			// This is enough in theory, but this script will also update the destination every
 			// frame as the destination is used for debugging and may be used for other things by other
