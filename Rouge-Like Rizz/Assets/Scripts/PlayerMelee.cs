@@ -15,7 +15,7 @@ public class PlayerMelee : MonoBehaviour
     public float swingDowntime = 2f;
     public Transform sword;
     private bool canSwing = true;
-
+    public Renderer swordUI;
 
     private void Start()
     {
@@ -33,7 +33,8 @@ public class PlayerMelee : MonoBehaviour
 
     private void Attack()
     {
-        //play animation
+        swordUI.enabled = false;
+
         Collider2D[] hitEnemies = Physics2D.OverlapCircleAll(attackPoint.position, attackRange, enemyLayers);
 
         foreach(Collider2D enemy in hitEnemies) 
@@ -47,6 +48,7 @@ public class PlayerMelee : MonoBehaviour
         canSwing = false;
         yield return new WaitForSeconds(swingDowntime);
         canSwing = true;
+        swordUI.enabled = true;
     }
 
     void OnDrawGizmosSelected()

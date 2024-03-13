@@ -55,3 +55,6 @@ TagManager:
   - name: Obstacles
     uniqueID: 745040555
     locked: 0
+  - name: HealthBars
+    uniqueID: 1673669979
+    locked: 0
