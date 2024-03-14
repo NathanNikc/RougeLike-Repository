@@ -8,14 +8,14 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField]
     private Image healthBar;
     [SerializeField]
-    public float healthAmount = 100f;
+    private float healthAmount = 100f;
     [SerializeField]
     public GameObject enemy;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame

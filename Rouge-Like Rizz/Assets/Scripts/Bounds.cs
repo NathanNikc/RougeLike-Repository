@@ -6,8 +6,8 @@ public class Bounds : MonoBehaviour
 {
     private float topBound = 4.1f;
     private float bottomBound = -3.6f;
-    private float leftBound = -7.8f;
-    private float rightBound = 7.8f;
+    private float leftBound = -8.2f;
+    private float rightBound = 8.2f;
 
     // Start is called before the first frame update
     void Start()

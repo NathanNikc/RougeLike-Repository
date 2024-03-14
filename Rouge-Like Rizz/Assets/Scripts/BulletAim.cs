@@ -17,8 +17,9 @@ public class BulletAim: MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        rb = GetComponent<Rigidbody2D>(); //rb variable gets rb of the hinge that the firepoint rotates around so the hinge can be told to follow the mouse. this is so the player doesnt rotate to move the firepoint, the invisable hinge does.
+        rb = GetComponent<Rigidbody2D>();//rb variable gets rb of the hinge that the firepoint rotates around so the hinge can be told to follow the mouse. this is so the player doesnt rotate to move the firepoint, the invisable hinge does.   
     }
+
 
     public void Fire()
     {
@@ -29,6 +30,7 @@ public class BulletAim: MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        sceneCamera = Camera.main;
         FirePointHinge.transform.position = player.transform.position;
         mousePosition = sceneCamera.ScreenToWorldPoint(Input.mousePosition);
         Vector2 aimDirection = mousePosition - rb.position;
@@ -45,7 +47,7 @@ public class BulletAim: MonoBehaviour
     private IEnumerator FireRate()
     {
         shotFired = true;
-        yield return new WaitForSeconds(.85f);
+        yield return new WaitForSeconds(.5f);
         shotFired = false;
     }
 }

@@ -8,18 +8,18 @@ public class EnemyHealth : MonoBehaviour
 
     private Slider slider;
 
-    void Start()
+    private void Start()
     {
         slider = GetComponent<Slider>(); 
     }
 
-    public void SetMaxHealth(int health)
+    private void SetMaxHealth(int health)
     {
         slider.maxValue = health;
         slider.value = health;
     }
 
-    public void SetHealth(int health)
+    private void SetHealth(int health)
     {
         slider.value = health;
     }
