@@ -10,6 +10,7 @@ TagManager:
   - Enemy
   - DamageTaker
   - Door
+  - TopDoorPrompt
   layers:
   - Default
   - TransparentFX
@@ -58,4 +59,7 @@ TagManager:
     locked: 0
   - name: HealthBars
     uniqueID: 1673669979
+    locked: 0
+  - name: Interact
+    uniqueID: 1891881189
     locked: 0
