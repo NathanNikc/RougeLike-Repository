@@ -63,3 +63,6 @@ TagManager:
   - name: Interact
     uniqueID: 1891881189
     locked: 0
+  - name: HUD
+    uniqueID: 431398923
+    locked: 0
