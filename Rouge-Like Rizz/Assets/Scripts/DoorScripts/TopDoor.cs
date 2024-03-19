@@ -11,18 +11,20 @@ public class TopDoor : MonoBehaviour
     public AIDestinationSetter destinationSetter;
     public int Enemies;
     public Canvas EInteractCanvas;
-    private bool isInRange = false;
+    public bool isInRange = false;
+    public int lowTopScene = 2;
+    public int topTopScene = 6;
 
     public void Start()
     {
-        sceneBuildIndex = Random.Range(2, 6);
+        sceneBuildIndex = Random.Range(lowTopScene, topTopScene); //integers are exclusive on the top range, need to set the top scene to 1 value higher than the largest numbered scene to accomodate
         destinationSetter = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
+        EInteractCanvas.enabled = false;
     }
 
     public void Update()
     {
        Enemies =  GameObject.FindGameObjectsWithTag("Enemy").Length;
-       EInteractCanvas = GameObject.FindGameObjectWithTag("TopDoorPrompt").GetComponent<Canvas>();
     }
 
     void OnTriggerStay2D(Collider2D other)

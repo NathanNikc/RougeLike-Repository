@@ -406,6 +406,7 @@ GameObject:
   - component: {fileID: 1615119519384250077}
   - component: {fileID: 1171307825387129387}
   - component: {fileID: 2309483985922367968}
+  - component: {fileID: 3935928566339695325}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -715,6 +716,18 @@ MonoBehaviour:
   swingDowntime: 2
   sword: {fileID: 0}
   swordUI: {fileID: 0}
+--- !u!114 &3935928566339695325
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7090726410142282855}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b28df25d40047e940bce7936c94d791b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7607334635313210624
 GameObject:
   m_ObjectHideFlags: 0
