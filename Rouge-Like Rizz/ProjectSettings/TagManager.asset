@@ -11,6 +11,8 @@ TagManager:
   - DamageTaker
   - Door
   - TopDoorPrompt
+  - Bullet
+  - Ring
   layers:
   - Default
   - TransparentFX

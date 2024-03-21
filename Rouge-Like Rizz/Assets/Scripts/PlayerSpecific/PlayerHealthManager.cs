@@ -71,7 +71,7 @@ public class PlayerHealthManager : MonoBehaviour
             Destroy(player);
         }
 
-        if (Input.GetKeyDown(KeyCode.C) && hasHeal == true && healthAmount < 100f)
+        if (Input.GetKeyDown(KeyCode.Q) && hasHeal == true && healthAmount < 100f)
         {
             Heal(20);
             healCounter -= 1;

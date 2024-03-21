@@ -741,7 +741,7 @@ GameObject:
   - component: {fileID: 8618814756285264130}
   m_Layer: 6
   m_Name: FirePointHinge
-  m_TagString: Untagged
+  m_TagString: Bullet
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,6 +807,7 @@ MonoBehaviour:
   firePoint: {fileID: 7598223808368583494}
   player: {fileID: 7604424593542382669}
   FirePointHinge: {fileID: 7381040415590371370}
+  shootDelay: 0.5
 --- !u!1 &7740259977136770889
 GameObject:
   m_ObjectHideFlags: 0

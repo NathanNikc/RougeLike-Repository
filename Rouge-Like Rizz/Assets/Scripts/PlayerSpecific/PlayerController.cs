@@ -22,7 +22,7 @@ public class PlayerController : MonoBehaviour
     [Header("DashSettings")]
     [SerializeField] float dashSpeed = 50f;
     [SerializeField] private TrailRenderer tr;
-    [SerializeField] float dashDuration = .3f;
+    [SerializeField] float dashDuration = 1f;
     [SerializeField] int dashCooldown = 3;
     bool isDashing;
   
@@ -89,7 +89,7 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private IEnumerator Invulnerability()
+    public IEnumerator Invulnerability()
     {
         Physics2D.IgnoreLayerCollision(6, 7, true);
         {
