@@ -1,26 +1,22 @@
 using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
     private EnemyHealthManager takeDamageMeathod;
     public GameObject bullet;
-    private float bulletDamage = 20f;
+    [SerializeField] public float bulletDamage = 15f;
+
 
     // Start is called before the first frame update
     public void Start()
     {
-        takeDamageMeathod = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
+       takeDamageMeathod = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
     }
-
-    // Update is called once per frame
-    public void Update()
-    {
-
-    }
-
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.tag == "Enemy")

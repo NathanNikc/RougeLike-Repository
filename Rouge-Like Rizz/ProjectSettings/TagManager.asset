@@ -13,6 +13,7 @@ TagManager:
   - TopDoorPrompt
   - Bullet
   - Ring
+  - Rage
   layers:
   - Default
   - TransparentFX
