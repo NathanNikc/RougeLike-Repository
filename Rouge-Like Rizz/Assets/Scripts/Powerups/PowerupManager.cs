@@ -10,13 +10,13 @@ public class PowerupManager : MonoBehaviour
     public bool isUsingRing = false;
     public bool hasRage = false;
     public bool isUsingRage = false;
-    [SerializeField] private BulletDamage damageAdjust;
+    [SerializeField] private BulletDamageManager damageAdjust;
 
     // Start is called before the first frame update
     public void Start()
     {
         spriteRend = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
-        damageAdjust = GameObject.FindGameObjectWithTag("Bullet").GetComponent<BulletDamage>();
+        damageAdjust = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
     }
 
     public void Update()
@@ -28,9 +28,7 @@ public class PowerupManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && hasRage == true && isUsingRage == false)
         {
-            damageAdjust.bulletDamage = 50f;
-            StartCoroutine(Angery());
-            damageAdjust.bulletDamage = 15f;
+            StartCoroutine(Angery());        
         }
     }
 
@@ -69,8 +67,10 @@ public class PowerupManager : MonoBehaviour
     {
         isUsingRage = true;
         spriteRend.color = new Color(1, 0, 0, 1);
+        damageAdjust.bulletDamage = 50f;
         yield return new WaitForSeconds(3);
         spriteRend.color = Color.white;
+        damageAdjust.bulletDamage = 15f;
         yield return new WaitForSeconds(5);
         isUsingRage = false;
     }
