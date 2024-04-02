@@ -13,7 +13,7 @@ public class BulletAim: MonoBehaviour
     public Transform player;
     public Transform FirePointHinge;
     private bool shotFired = false;
-    public float shootDelay = .5f;
+    public float shootDelay =.5f;
 
     // Start is called before the first frame update
     void Start()
