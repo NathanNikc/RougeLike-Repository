@@ -57,7 +57,7 @@ public class PowerupManager : MonoBehaviour
             yield return new WaitForSeconds(5);
             Physics2D.IgnoreLayerCollision(6, 7, false);
             spriteRend.color = Color.white;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(60f);
             isUsingRing = false;
         }
        
@@ -68,10 +68,10 @@ public class PowerupManager : MonoBehaviour
         isUsingRage = true;
         spriteRend.color = new Color(1, 0, 0, 1);
         damageAdjust.bulletDamage = 50f;
-        yield return new WaitForSeconds(3);
+        yield return new WaitForSeconds(8f);
         spriteRend.color = Color.white;
         damageAdjust.bulletDamage = 15f;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(120f);
         isUsingRage = false;
     }
 }
