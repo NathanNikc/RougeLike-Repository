@@ -6,11 +6,14 @@ using UnityEngine;
 public class PowerupManager : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer spriteRend;
-    public bool hasRing = false;
-    public bool isUsingRing = false;
-    public bool hasRage = false;
-    public bool isUsingRage = false;
     [SerializeField] private BulletDamageManager damageAdjust;
+    static bool hasRing = false;
+    static bool isUsingRing = false;
+    static bool hasRage = false;
+    static bool isUsingRage = false;
+    static bool hasBook = false;
+    public float shootDelay = .5f;
+ 
 
     // Start is called before the first frame update
     public void Start()
@@ -30,6 +33,11 @@ public class PowerupManager : MonoBehaviour
         {
             StartCoroutine(Angery());        
         }
+
+        if (hasBook == true)
+        {
+            shootDelay = .15f;
+        }
     }
 
     public void OnTriggerEnter2D(Collider2D other)
@@ -46,7 +54,14 @@ public class PowerupManager : MonoBehaviour
             Destroy(other.gameObject);
             hasRage = true;
         }
+
+        if (other.tag == "Book")
+        {
+            Destroy(other.gameObject);
+            hasBook = true;
+        }
     }
+
 
     public IEnumerator InvincibleAF()
     {

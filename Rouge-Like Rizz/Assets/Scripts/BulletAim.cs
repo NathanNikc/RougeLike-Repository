@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class BulletAim: MonoBehaviour
@@ -13,12 +14,15 @@ public class BulletAim: MonoBehaviour
     public Transform player;
     public Transform FirePointHinge;
     private bool shotFired = false;
-    public float shootDelay =.5f;
+    public float shootDelay = .5f;
+    static bool hasBook = false;
+    public PowerupManager frAdjust;
 
     // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();//rb variable gets rb of the hinge that the firepoint rotates around so the hinge can be told to follow the mouse. this is so the player doesnt rotate to move the firepoint, the invisable hinge does.   
+        frAdjust = GameObject.FindGameObjectWithTag("Player").GetComponent<PowerupManager>();
     }
 
 
@@ -42,13 +46,22 @@ public class BulletAim: MonoBehaviour
         {
             Fire();
             StartCoroutine(FireRate());
-        }      
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Book")
+        {
+            Destroy(other.gameObject);
+            hasBook = true;
+        }
     }
 
     private IEnumerator FireRate()
     {
         shotFired = true;
-        yield return new WaitForSeconds(shootDelay);
+        yield return new WaitForSeconds(frAdjust.shootDelay);
         shotFired = false;
     }
 }

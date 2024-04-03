@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class EnemyHealth : MonoBehaviour
 {
 
-    private Slider slider;
+    [SerializeField] private Slider slider;
 
     private void Start()
     {
-        slider = GetComponent<Slider>(); 
+        slider = GetComponentInChildren<Slider>();
     }
 
     private void SetMaxHealth(int health)
