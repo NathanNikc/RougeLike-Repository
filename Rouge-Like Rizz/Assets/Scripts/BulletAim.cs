@@ -49,15 +49,6 @@ public class BulletAim: MonoBehaviour
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if (other.tag == "Book")
-        {
-            Destroy(other.gameObject);
-            hasBook = true;
-        }
-    }
-
     private IEnumerator FireRate()
     {
         shotFired = true;

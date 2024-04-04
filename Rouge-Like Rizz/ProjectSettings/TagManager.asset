@@ -17,6 +17,7 @@ TagManager:
   - DamageManager
   - Sword
   - Book
+  - SwordShockwave
   layers:
   - Default
   - TransparentFX
@@ -68,6 +69,9 @@ TagManager:
     locked: 0
   - name: Interact
     uniqueID: 1891881189
+    locked: 0
+  - name: Shockwave
+    uniqueID: 4045082395
     locked: 0
   - name: HUD
     uniqueID: 431398923

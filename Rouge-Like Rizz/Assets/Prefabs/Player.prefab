@@ -728,12 +728,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b28df25d40047e940bce7936c94d791b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swordShockwavePrefab: {fileID: 3861709399181301394, guid: fad0fbb9a8c3e594a957584814e6bd95, type: 3}
   spriteRend: {fileID: 0}
-  hasRing: 0
-  isUsingRing: 0
-  hasRage: 0
-  isUsingRage: 0
-  damageAdjust: {fileID: -6495644332078289696, guid: c1012b9cc24565640a51516fa1203d27, type: 3}
+  damageAdjust: {fileID: 0}
+  swordSwingPoint: {fileID: 0}
+  shootDelay: 0.5
+  shockwaveSpeed: 10
 --- !u!1 &7607334635313210624
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,6 +814,7 @@ MonoBehaviour:
   player: {fileID: 7604424593542382669}
   FirePointHinge: {fileID: 7381040415590371370}
   shootDelay: 0.5
+  frAdjust: {fileID: 0}
 --- !u!1 &7740259977136770889
 GameObject:
   m_ObjectHideFlags: 0

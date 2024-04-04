@@ -1,25 +1,32 @@
  using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEditor;
 using UnityEngine;
 
 public class PowerupManager : MonoBehaviour
 {
+    public GameObject swordShockwavePrefab;
     [SerializeField] private SpriteRenderer spriteRend;
     [SerializeField] private BulletDamageManager damageAdjust;
+    [SerializeField] private BulletAim swordSwingPoint;
     static bool hasRing = false;
     static bool isUsingRing = false;
     static bool hasRage = false;
     static bool isUsingRage = false;
+    static bool hasSword = false;
+    static bool isUsingSword = false;
     static bool hasBook = false;
     public float shootDelay = .5f;
- 
+    public float shockwaveSpeed = 10f;
+
 
     // Start is called before the first frame update
     public void Start()
     {
         spriteRend = GameObject.FindGameObjectWithTag("Player").GetComponent<SpriteRenderer>();
         damageAdjust = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
+        swordSwingPoint = GameObject.FindGameObjectWithTag("Bullet").GetComponent<BulletAim>();
     }
 
     public void Update()
@@ -31,7 +38,12 @@ public class PowerupManager : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.X) && hasRage == true && isUsingRage == false)
         {
-            StartCoroutine(Angery());        
+            StartCoroutine(Angery());
+        }
+
+        if (Input.GetKeyDown(KeyCode.Z) && hasSword == true && isUsingSword == false)
+        {
+            StartCoroutine(SwordGoSwing());
         }
 
         if (hasBook == true)
@@ -60,9 +72,27 @@ public class PowerupManager : MonoBehaviour
             Destroy(other.gameObject);
             hasBook = true;
         }
+
+        if (other.tag == "Sword")
+        {
+            Destroy(other.gameObject);
+            hasSword = true;
+        }
     }
 
-
+    public IEnumerator SwordGoSwing()
+    {
+        isUsingSword = true;
+        {
+            GameObject swordSwing = Instantiate(swordShockwavePrefab, swordSwingPoint.firePoint.position, swordSwingPoint.firePoint.rotation);
+            swordSwing.GetComponent<Rigidbody2D>().AddForce(swordSwingPoint.firePoint.up * shockwaveSpeed, ForceMode2D.Impulse);
+            {
+                yield return new WaitForSeconds(50f);
+                isUsingSword = false;
+            }
+        }
+    }
+    
     public IEnumerator InvincibleAF()
     {
         Physics2D.IgnoreLayerCollision(6, 7, true);
