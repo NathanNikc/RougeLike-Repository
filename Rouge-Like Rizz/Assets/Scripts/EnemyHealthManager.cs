@@ -11,6 +11,8 @@ public class EnemyHealthManager : MonoBehaviour
     private float healthAmount = 100f;
     [SerializeField]
     public GameObject enemy;
+    private SpawnHealthBar healthBarLocation;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -21,9 +23,11 @@ public class EnemyHealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (healthAmount <= 0)
         {
             Destroy(enemy);
+            Destroy(gameObject);
         }
     }
 

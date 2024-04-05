@@ -18,6 +18,7 @@ TagManager:
   - Sword
   - Book
   - SwordShockwave
+  - EnemyHealthBar
   layers:
   - Default
   - TransparentFX

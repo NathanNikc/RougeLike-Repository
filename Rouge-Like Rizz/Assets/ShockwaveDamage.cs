@@ -10,7 +10,7 @@ public class ShockwaveDamage : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shockwaveHurt = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
+        shockwaveHurt = GameObject.FindGameObjectWithTag("EnemyHealthBar").GetComponent<EnemyHealthManager>();
     }
 
     private void OnTriggerEnter2D(Collider2D collider)

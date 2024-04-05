@@ -14,7 +14,7 @@ public class BulletDamage : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-       takeDamageMeathod = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
+       takeDamageMeathod = GameObject.FindGameObjectWithTag("EnemyHealthBar").GetComponent<EnemyHealthManager>();
        damageFinder = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
     }
     
