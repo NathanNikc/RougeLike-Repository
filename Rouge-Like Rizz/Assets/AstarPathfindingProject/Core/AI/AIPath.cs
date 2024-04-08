@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using Codice.Client.Common.GameUI;
 
 namespace Pathfinding {
 	using Pathfinding.RVO;
@@ -214,8 +215,10 @@ namespace Pathfinding {
 		}
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::steeringTarget</summary>
-		public Vector3 steeringTarget {
-			get {
+		public Vector3 steeringTarget
+		{
+			get
+			{
 				return interpolator.valid ? interpolator.position : position;
 			}
 		}
@@ -227,10 +230,10 @@ namespace Pathfinding {
 		float IAstarAI.height { get { return height; } set { height = value; } }
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::maxSpeed</summary>
-		float IAstarAI.maxSpeed { get { return maxSpeed; } set { maxSpeed = value; } }
+		[SerializeField] float IAstarAI.maxSpeed { get { return maxSpeed; } set { maxSpeed = value; } }
 
-		/// <summary>\copydoc Pathfinding::IAstarAI::canSearch</summary>
-		bool IAstarAI.canSearch { get { return canSearch; } set { canSearch = value; } }
+        /// <summary>\copydoc Pathfinding::IAstarAI::canSearch</summary>
+        bool IAstarAI.canSearch { get { return canSearch; } set { canSearch = value; } }
 
 		/// <summary>\copydoc Pathfinding::IAstarAI::canMove</summary>
 		bool IAstarAI.canMove { get { return canMove; } set { canMove = value; } }
@@ -331,6 +334,7 @@ namespace Pathfinding {
 			}
 		}
 
+		
 		protected override void ClearPath () {
 			CancelCurrentPathRequest();
 			if (path != null) path.Release(this);

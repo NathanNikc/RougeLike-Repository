@@ -711,7 +711,6 @@ MonoBehaviour:
   enemyLayers:
     serializedVersion: 2
     m_Bits: 128
-  takeMeleeDamageMeathod: {fileID: 0}
   swordDamage: 40
   swingDowntime: 2
   sword: {fileID: 0}

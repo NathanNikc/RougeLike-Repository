@@ -80,13 +80,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void OnCollisionEnter2D(Collision2D collision) //give player i-frames
+    public void GoInvincible()
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            playerHealthMeathods.TakeDamage(30f); //increase damage taken per hit after i-frames are applied
-            StartCoroutine(Invulnerability());
-        }
+        StartCoroutine(Invulnerability());
     }
 
     public IEnumerator Invulnerability()

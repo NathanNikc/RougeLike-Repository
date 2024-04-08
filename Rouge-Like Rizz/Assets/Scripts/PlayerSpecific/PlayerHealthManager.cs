@@ -33,7 +33,6 @@ public class PlayerHealthManager : MonoBehaviour
 
         healthBar.fillAmount = healthAmount / 100f;
     }
-
     public void TakeDamage(float damage)
     {
         healthAmount -= damage;
