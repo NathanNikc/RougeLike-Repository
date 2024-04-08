@@ -10,7 +10,7 @@ public class PlayerMelee : MonoBehaviour
     public Transform attackPoint;
     public float attackRange = .5f;
     public LayerMask enemyLayers;
-    public EnemyHealthManager takeMeleeDamageMeathod;
+    //public EnemyHealthManager takeMeleeDamageMeathod;
     public float swordDamage = 40f;
     public float swingDowntime = 2f;
     public Transform sword;
@@ -19,7 +19,7 @@ public class PlayerMelee : MonoBehaviour
 
     private void Start()
     {
-        takeMeleeDamageMeathod = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
+       // takeMeleeDamageMeathod = GameObject.FindGameObjectWithTag("Enemy").GetComponent<EnemyHealthManager>();
     }
     // Update is called once per frame
     void Update()
@@ -39,7 +39,7 @@ public class PlayerMelee : MonoBehaviour
 
         foreach(Collider2D enemy in hitEnemies) 
         {
-            takeMeleeDamageMeathod.EnemyTakeDamage(swordDamage);
+         //   takeMeleeDamageMeathod.EnemyTakeDamage(swordDamage);
         }
     }
 

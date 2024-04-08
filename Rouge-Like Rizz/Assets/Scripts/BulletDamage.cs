@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    private EnemyHealthManager takeDamageMeathod;
     private BulletDamageManager damageFinder;
     [SerializeField] public GameObject bullet;
 
@@ -14,7 +13,7 @@ public class BulletDamage : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-       takeDamageMeathod = GameObject.FindGameObjectWithTag("EnemyHealthBar").GetComponent<EnemyHealthManager>();
+   //    takeDamageMeathod = GameObject.FindGameObjectWithTag("EnemyHealthBar").GetComponent<EnemyHealthManager>();
        damageFinder = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
     }
     
@@ -22,7 +21,7 @@ public class BulletDamage : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            takeDamageMeathod.EnemyTakeDamage(damageFinder.bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
+       //     takeDamageMeathod.EnemyTakeDamage(damageFinder.bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
             Destroy(bullet);
         }
         else if (collision.gameObject.tag == "Obstacle")
