@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,13 +8,17 @@ public class EnemyHealthManager : MonoBehaviour
 {
     public Image enemyHealthBar;
     [SerializeField] private float enemyHealthAmount = 100f;
-    private float enemyMaxHealth = 100f;
+    [SerializeField] private float enemyMaxHealth = 100f;
+    [SerializeField] private BulletDamageManager damageFinder;
+    [SerializeField] public GameObject bullet;
     public GameObject enemy;
+    private float ShockwaveDamage = 100;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        enemy = gameObject;
+        damageFinder = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
     }
 
     public void SetHealth(float maxHealth, float health)
@@ -31,9 +36,8 @@ public class EnemyHealthManager : MonoBehaviour
     public void EnemyTakeDamage(float damage)
     {
         enemyHealthAmount -= damage;
-        enemyHealthBar.fillAmount = enemyHealthAmount / 100f;
+        enemyHealthBar.fillAmount = enemyHealthAmount / enemyMaxHealth;
     }
-
 
     //holds almost-everything to do with healing
     public void HealMeathods()
@@ -41,6 +45,19 @@ public class EnemyHealthManager : MonoBehaviour
         if (enemyHealthAmount <= 0)
         {
             Destroy(enemy);
+        }
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Bullet")
+        {
+            EnemyTakeDamage(damageFinder.bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
+            Destroy(bullet);
+        }
+        else if (collision.gameObject.tag == "SwordShockwave")
+        {
+            EnemyTakeDamage(ShockwaveDamage);
         }
     }
 }

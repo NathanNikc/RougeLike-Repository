@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 3313505403495365406}
   - component: {fileID: 6106270260682404875}
   - component: {fileID: 7166760005298720181}
-  - component: {fileID: -4046951795493577380}
   m_Layer: 0
   m_Name: SwordShockwave
   m_TagString: SwordShockwave
@@ -170,17 +169,5 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 41493ee7cc0a2a947afc1a16612e9423, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &-4046951795493577380
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3861709399181301394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f7ac0fe7da360d4d80541d50daac792, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

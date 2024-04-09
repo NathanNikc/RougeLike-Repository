@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     private PlayerHealthManager playerHealthManager;
     [SerializeField]
     private AIPath AIPath;
+    [SerializeField] 
+    private EnemyHealthManager enemyHealthManager;
 
     private GameObject player;
     private GameObject playerHealth;
@@ -36,12 +38,12 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        SetEnemyValues();
+    
     }
 
     private void SetEnemyValues()
     {
-        GetComponent<EnemyHealthManager>().SetHealth(enemyData.enemyHealth, enemyData.enemyHealth);
+        enemyHealthManager.SetHealth(enemyData.enemyHealth, enemyData.enemyHealth);
         damage = enemyData.enemyDamage;
         AIPath.maxSpeed = enemyData.enemySpeed;
     }

@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 2587463022635010328}
   - component: {fileID: 2831729966161314110}
   - component: {fileID: 5426802979792922230}
-  - component: {fileID: 6043541201837830042}
   m_Layer: 6
   m_Name: EnemyHealthBar
   m_TagString: Untagged
@@ -180,21 +179,6 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
---- !u!114 &6043541201837830042
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1341553226207411947}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8fbb4d4875548af4e8fbdda50df9941a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  healthBar: {fileID: 8792670426471697125}
-  healthAmount: 100
-  enemy: {fileID: 0}
 --- !u!1 &1900033229901186041
 GameObject:
   m_ObjectHideFlags: 0
@@ -475,6 +459,7 @@ GameObject:
   - component: {fileID: 27008538549840551}
   - component: {fileID: 7654275344537693908}
   - component: {fileID: 152787356030264437}
+  - component: {fileID: 2155852615735250374}
   m_Layer: 7
   m_Name: Enemy
   m_TagString: Enemy
@@ -664,6 +649,26 @@ MonoBehaviour:
   enemyData: {fileID: 11400000, guid: cd41801b83338ef42a80345e81cb1e68, type: 2}
   playerController: {fileID: 0}
   playerHealthManager: {fileID: 0}
+  AIPath: {fileID: 0}
+  enemyHealthManager: {fileID: 2155852615735250374}
+--- !u!114 &2155852615735250374
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6160417009846375029}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fbb4d4875548af4e8fbdda50df9941a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyHealthBar: {fileID: 8792670426471697125}
+  enemyHealthAmount: 100
+  enemyMaxHealth: 100
+  damageFinder: {fileID: 0}
+  bullet: {fileID: 6737928125502436849, guid: c1012b9cc24565640a51516fa1203d27, type: 3}
+  enemy: {fileID: 6160417009846375029}
 --- !u!1 &7051993053215297014
 GameObject:
   m_ObjectHideFlags: 0
