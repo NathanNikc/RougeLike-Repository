@@ -19,6 +19,7 @@ TagManager:
   - Book
   - SwordShockwave
   - EnemyHealthBar
+  - PlayerHealthBar
   layers:
   - Default
   - TransparentFX

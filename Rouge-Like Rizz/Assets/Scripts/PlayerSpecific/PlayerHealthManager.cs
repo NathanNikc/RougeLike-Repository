@@ -9,15 +9,17 @@ public class PlayerHealthManager : MonoBehaviour
     public GameObject healthPot;
 
     public Image healthBar;
-    public float healthAmount = 100f;
-    public GameObject player;
+    private float healthAmount = 1000f;
+    private float healthMax = 1000f;
+    private GameObject player;
     public bool hasHeal = false;
     public int healCounter;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        player = GameObject.FindGameObjectWithTag("Player");
+        healthBar.fillAmount = healthAmount / healthMax;
     }
 
     // Update is called once per frame
@@ -29,14 +31,14 @@ public class PlayerHealthManager : MonoBehaviour
     public void Heal(float healingAmount)
     {
         healthAmount += healingAmount;
-        healthAmount = Mathf.Clamp(healthAmount, 0, 100); //makes sure the value of "healthAmount" can't be less than 0 or greater than 100;
+        healthAmount = Mathf.Clamp(healthAmount, 0, healthMax); //makes sure the value of "healthAmount" can't be less than 0 or greater than 100;
 
-        healthBar.fillAmount = healthAmount / 100f;
+        healthBar.fillAmount = healthAmount / healthMax;
     }
     public void TakeDamage(float damage)
     {
         healthAmount -= damage;
-        healthBar.fillAmount = healthAmount / 100f;
+        healthBar.fillAmount = healthAmount / healthMax;
     }
 
     public void PickUpPot()
@@ -70,7 +72,7 @@ public class PlayerHealthManager : MonoBehaviour
             Destroy(player);
         }
 
-        if (Input.GetKeyDown(KeyCode.Q) && hasHeal == true && healthAmount < 100f)
+        if (Input.GetKeyDown(KeyCode.Q) && hasHeal == true && healthAmount < healthMax)
         {
             Heal(20);
             healCounter -= 1;
