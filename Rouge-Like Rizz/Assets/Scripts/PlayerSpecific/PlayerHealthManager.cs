@@ -9,7 +9,7 @@ public class PlayerHealthManager : MonoBehaviour
     public GameObject healthPot;
 
     public Image healthBar;
-    private float healthAmount = 1000f;
+    static float healthAmount = 1000f;
     private float healthMax = 1000f;
     private GameObject player;
     public bool hasHeal = false;

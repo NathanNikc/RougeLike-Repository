@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class LeftDoor : MonoBehaviour
 {
-    public int sceneBuildIndex;
+    private int sceneBuildIndex;
     public AIDestinationSetter destinationSetter;
     public int Enemies;
     public Canvas EInteractCanvas;
     public bool isInRange = false;
-    public int lowLeftScene;
-    public int topLeftScene;
+    private int lowLeftScene = 14;
+    private int topLeftScene = 20;
 
     public void Start()
     {

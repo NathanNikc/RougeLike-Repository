@@ -7,13 +7,13 @@ using UnityEngine.UI;
 
 public class TopDoor : MonoBehaviour
 {
-    public int sceneBuildIndex;
+    private int sceneBuildIndex;
     public AIDestinationSetter destinationSetter;
     public int Enemies;
     public Canvas EInteractCanvas;
     public bool isInRange = false;
-    public int lowTopScene = 2;
-    public int topTopScene = 6;
+    private int lowTopScene = 2;
+    private int topTopScene = 8;
 
     public void Start()
     {

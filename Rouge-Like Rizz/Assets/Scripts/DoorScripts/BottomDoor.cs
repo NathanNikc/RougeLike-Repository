@@ -7,13 +7,13 @@ using UnityEngine.SceneManagement;
 
 public class BottomDoor : MonoBehaviour
 {
-    public int sceneBuildIndex;
+    private int sceneBuildIndex;
     public AIDestinationSetter destinationSetter;
     public int Enemies;
     public Canvas EInteractCanvas;
     public bool isInRange = false;
-    public int lowBottomScene;
-    public int topBottomScene;
+    private int lowBottomScene = 20;
+    private int topBottomScene = 26;
 
     public void Start()
     {
