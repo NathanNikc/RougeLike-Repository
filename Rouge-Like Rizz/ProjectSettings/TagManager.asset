@@ -21,6 +21,9 @@ TagManager:
   - EnemyHealthBar
   - PlayerHealthBar
   - RizzMeter
+  - SammichPowerupIcon
+  - RingPowerupIcon
+  - SwordPowerupIcon
   layers:
   - Default
   - TransparentFX

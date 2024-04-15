@@ -55,9 +55,6 @@ public class PlayerHealthManager : MonoBehaviour
             Instantiate(healthPot);
         }
 
-
-        Debug.Log("You have " + healCounter + " heals!");
-
         if (healCounter > 0)
         {
             hasHeal = true;

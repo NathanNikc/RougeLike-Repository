@@ -6,8 +6,9 @@ using UnityEngine.UI;
 public class RizzOMeter : MonoBehaviour
 {
     public Image rizz;
-    static float rizzAmount = 5000;
-    private float rizzMax = 10000f;
+    static float rizzAmount = 0;
+    private float rizzMax = 100000f;
+    public float shareRizzAmount = rizzAmount;
 
     // Start is called before the first frame update
     void Start()
@@ -19,6 +20,7 @@ public class RizzOMeter : MonoBehaviour
     void Update()
     {
         RizzMeathods();
+        shareRizzAmount = rizzAmount;
     }
 
     public void GainRizz(float gainRizzAmount)
@@ -37,6 +39,10 @@ public class RizzOMeter : MonoBehaviour
     //holds almost-everything to do with healing
     public void RizzMeathods()
     {
+
+        Debug.Log("rizzTotal = " + rizzAmount);
+       
+
         if (Input.GetKeyDown(KeyCode.R))
         {
             GainRizz(1000f);
@@ -50,7 +56,7 @@ public class RizzOMeter : MonoBehaviour
         {
             HeartbreakEnding();
         }
-    } 
+    }
 
     public void HeartbreakEnding()
     {

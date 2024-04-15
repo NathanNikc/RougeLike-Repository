@@ -15,7 +15,6 @@ public class BulletAim: MonoBehaviour
     public Transform FirePointHinge;
     private bool shotFired = false;
     public float shootDelay = .5f;
-    static bool hasBook = false;
     public PowerupManager frAdjust;
 
     // Start is called before the first frame update

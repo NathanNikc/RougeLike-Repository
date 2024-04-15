@@ -11,14 +11,16 @@ public class EnemyHealthManager : MonoBehaviour
     [SerializeField] private float enemyMaxHealth = 100f;
     [SerializeField] private BulletDamageManager damageFinder;
     [SerializeField] public GameObject bullet;
+    [SerializeField] private RizzOMeter enemyKillCounter;
     public GameObject enemy;
-    private float ShockwaveDamage = 100;
+    private float ShockwaveDamage = 250;
 
     // Start is called before the first frame update
     void Start()
     {
         enemy = gameObject;
         damageFinder = GameObject.FindGameObjectWithTag("DamageManager").GetComponent<BulletDamageManager>();
+        enemyKillCounter = GameObject.FindGameObjectWithTag("RizzMeter").GetComponent<RizzOMeter>();
     }
 
     public void SetHealth(float maxHealth, float health)
@@ -44,6 +46,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (enemyHealthAmount <= 0)
         {
+            enemyKillCounter.GainRizz(100);
             Destroy(enemy);
         }
     }
