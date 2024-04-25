@@ -265,6 +265,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rizz: {fileID: 1399712323}
+  shareRizzAmount: 0
 --- !u!114 &289826069
 MonoBehaviour:
   m_ObjectHideFlags: 0
