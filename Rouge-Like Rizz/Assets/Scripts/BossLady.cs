@@ -17,6 +17,7 @@ public class BossLady : MonoBehaviour
     [Header("AttackPlayer")]
     [SerializeField] float attackPlayerSpeed;
     [SerializeField] Transform player;
+    [SerializeField] private Vector2 playerPosition;
     //Other
     [Header("Other")]
     [SerializeField] Transform groundCheckUp;
@@ -44,11 +45,18 @@ public class BossLady : MonoBehaviour
         isTouchingUp = Physics2D.OverlapCircle(groundCheckUp.position, groundCheckRadius, groundLayer);
         isTouchingDown = Physics2D.OverlapCircle(groundCheckDown.position, groundCheckRadius, groundLayer);
         isTouchingWall = Physics2D.OverlapCircle(groundCheckWall.position, groundCheckRadius, groundLayer);
-        idleState();
-     // AttackUpAndDown();
+        playerPosition = player.position - transform.position;
+        playerPosition.Normalize();
+        //idleState();
+        // AttackUpAndDown();
+        FlipTowardsPlayer();
+        if (Input.GetKeyDown(KeyCode.Space)) 
+        {
+            AttackPlayer();
+        } 
     }
 
-    void idleState()
+    public void idleState()
     {
         if (isTouchingUp && goingUp) 
         {
@@ -73,7 +81,7 @@ public class BossLady : MonoBehaviour
         enemyRb.velocity = idleMoveSpeed * idleMoveDirection;
     }
 
-    void AttackUpAndDown()
+    public void AttackUpAndDown()
     {
         if (isTouchingUp && goingUp)
         {
@@ -98,11 +106,25 @@ public class BossLady : MonoBehaviour
         enemyRb.velocity = attackMoveSpeed * attackMoveDirection;
     }
 
-    void AttackPlayer()
+    public void AttackPlayer()
     {
-        //take player position
-        //Normalize the position
-        //attack that position
+        playerPosition = player.position - transform.position;
+        playerPosition.Normalize();
+        enemyRb.velocity = playerPosition * attackPlayerSpeed;
+    }
+
+    void FlipTowardsPlayer()
+    {
+        float playerDirection = player.position.x - transform.position.x;
+
+        if (playerDirection > 0 && facingLeft)
+        {
+            Flip();
+        }
+        else if (playerDirection < 0 && !facingLeft)
+        {
+            Flip();
+        }
     }
 
     void ChangeDirection()

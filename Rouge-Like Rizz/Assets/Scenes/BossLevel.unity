@@ -1153,6 +1153,11 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!4 &882315405 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7604424593542382669, guid: cdb7811017db56741918d0d0944388e1, type: 3}
+  m_PrefabInstance: {fileID: 1399429850}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &958704764
 GameObject:
   m_ObjectHideFlags: 0
@@ -2729,10 +2734,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleMoveSpeed: 5
   idleMoveDirection: {x: -1, y: 2}
-  attackMoveSpeed: 20
+  attackMoveSpeed: 10
   attackMoveDirection: {x: -1, y: 5}
-  attackPlayerSpeed: 25
-  player: {fileID: 7604424593542382669, guid: cdb7811017db56741918d0d0944388e1, type: 3}
+  attackPlayerSpeed: 15
+  player: {fileID: 882315405}
+  playerPosition: {x: 0, y: 0}
   groundCheckUp: {fileID: 335429873}
   groundCheckDown: {fileID: 1091840046}
   groundCheckWall: {fileID: 532319523}
