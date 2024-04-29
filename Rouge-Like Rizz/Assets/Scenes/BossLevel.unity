@@ -2643,9 +2643,10 @@ GameObject:
   - component: {fileID: 2001851871}
   - component: {fileID: 2001851873}
   - component: {fileID: 2001851872}
+  - component: {fileID: 2001851874}
   m_Layer: 0
   m_Name: BossLady
-  m_TagString: Untagged
+  m_TagString: BossLady
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2732,7 +2733,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f770dabb4127054eb34f0ab74a8e956, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  idleMoveSpeed: 5
+  idleMoveSpeed: 3
   idleMoveDirection: {x: -1, y: 2}
   attackMoveSpeed: 10
   attackMoveDirection: {x: -1, y: 5}
@@ -2818,6 +2819,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 3.12, y: 2}
   m_EdgeRadius: 0
+--- !u!95 &2001851874
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2001851868}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af24189fed47bf74d8de6418e50b7c52, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &2037410486
 GameObject:
   m_ObjectHideFlags: 0

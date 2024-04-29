@@ -18,6 +18,7 @@ public class BossLady : MonoBehaviour
     [SerializeField] float attackPlayerSpeed;
     [SerializeField] Transform player;
     [SerializeField] private Vector2 playerPosition;
+    private bool hasPlayerPosition;
     //Other
     [Header("Other")]
     [SerializeField] Transform groundCheckUp;
@@ -31,12 +32,14 @@ public class BossLady : MonoBehaviour
     private bool goingUp = true;
     private bool facingLeft = true;
     private Rigidbody2D enemyRb;
+    private Animator enemyAnim;
   
     void Start()
     {
         idleMoveDirection.Normalize();
         attackMoveDirection.Normalize();
         enemyRb = GetComponent<Rigidbody2D>();
+        enemyAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -47,13 +50,24 @@ public class BossLady : MonoBehaviour
         isTouchingWall = Physics2D.OverlapCircle(groundCheckWall.position, groundCheckRadius, groundLayer);
         playerPosition = player.position - transform.position;
         playerPosition.Normalize();
-        //idleState();
-        // AttackUpAndDown();
         FlipTowardsPlayer();
         if (Input.GetKeyDown(KeyCode.Space)) 
         {
             AttackPlayer();
         } 
+    }
+
+    void RandomStatePicker()
+    {
+        int randomState = Random.Range(0, 2);
+        if (randomState == 0)
+        {
+            enemyAnim.SetTrigger("AttackUpAndDown");
+        }
+        if (randomState == 1)
+        {
+            enemyAnim.SetTrigger("AttackPlayer");
+        }
     }
 
     public void idleState()
@@ -108,9 +122,23 @@ public class BossLady : MonoBehaviour
 
     public void AttackPlayer()
     {
-        playerPosition = player.position - transform.position;
-        playerPosition.Normalize();
-        enemyRb.velocity = playerPosition * attackPlayerSpeed;
+        if (!hasPlayerPosition)
+        {
+            playerPosition = player.position - transform.position;
+            playerPosition.Normalize();
+            hasPlayerPosition = true;
+        }
+        if (hasPlayerPosition) 
+        {
+            enemyRb.velocity = playerPosition * attackPlayerSpeed;
+
+        }
+        if (isTouchingWall || isTouchingDown)
+        {
+            enemyRb.velocity = Vector2.zero;
+            hasPlayerPosition = false;
+            enemyAnim.SetTrigger("Slammed");
+        }
     }
 
     void FlipTowardsPlayer()
