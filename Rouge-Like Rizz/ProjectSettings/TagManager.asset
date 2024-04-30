@@ -25,6 +25,7 @@ TagManager:
   - RingPowerupIcon
   - SwordPowerupIcon
   - BossLady
+  - BossLadyHealthBar
   layers:
   - Default
   - TransparentFX

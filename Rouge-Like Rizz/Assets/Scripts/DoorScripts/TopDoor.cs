@@ -14,12 +14,14 @@ public class TopDoor : MonoBehaviour
     public bool isInRange = false;
     private int lowTopScene = 2;
     private int topTopScene = 8;
+    public RightDoor doorCounter;
 
     public void Start()
     {
         sceneBuildIndex = Random.Range(lowTopScene, topTopScene); //integers are exclusive on the top range, need to set the top scene to 1 value higher than the largest numbered scene to accomodate
         destinationSetter = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         EInteractCanvas.enabled = false;
+        doorCounter = GameObject.FindGameObjectWithTag("Door").GetComponent<RightDoor>();
     }
 
     public void Update()
@@ -39,6 +41,7 @@ public class TopDoor : MonoBehaviour
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
                 EInteractCanvas.enabled = false;
                 isInRange = false;
+                doorCounter.DoorCounter(1);
             }
         }
     }

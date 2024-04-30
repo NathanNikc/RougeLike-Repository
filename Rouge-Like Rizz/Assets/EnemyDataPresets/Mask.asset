@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Mask
   m_EditorClassIdentifier: 
   enemyHealth: 150
-  enemyDamage: 20
+  enemyDamage: 5
   enemySpeed: 3

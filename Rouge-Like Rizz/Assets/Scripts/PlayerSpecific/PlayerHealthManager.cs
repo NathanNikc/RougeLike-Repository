@@ -9,8 +9,8 @@ public class PlayerHealthManager : MonoBehaviour
     public GameObject healthPot;
 
     public Image healthBar;
-    static float healthAmount = 1000f;
-    private float healthMax = 1000f;
+    static float healthAmount = 150f;
+    private float healthMax = 150f;
     private GameObject player;
     public bool hasHeal = false;
     public int healCounter;

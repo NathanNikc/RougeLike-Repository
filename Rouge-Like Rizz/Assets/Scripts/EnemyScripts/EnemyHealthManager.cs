@@ -44,9 +44,14 @@ public class EnemyHealthManager : MonoBehaviour
     //holds almost-everything to do with healing
     public void HealMeathods()
     {
-        if (enemyHealthAmount <= 0)
+        if (enemyHealthAmount <= 0 && gameObject.tag == "Enemy")
         {
             enemyKillCounter.GainRizz(100);
+            Destroy(enemy);
+        }
+        else if (enemyHealthAmount <= 0 && gameObject.tag == "BossLady")
+        {
+            enemyKillCounter.GainRizz(9999999999999999999);
             Destroy(enemy);
         }
     }

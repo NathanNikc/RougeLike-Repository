@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         playerTransform = transform;
-        spriteRend = GetComponent<SpriteRenderer>();
+        spriteRend = GetComponentInChildren<SpriteRenderer>();
         playerRb = GetComponent<Rigidbody2D>();
         playerHealthMeathods = GameObject.FindGameObjectWithTag("Healer").GetComponent<PlayerHealthManager>();
     }

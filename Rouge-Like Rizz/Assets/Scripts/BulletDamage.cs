@@ -29,5 +29,9 @@ public class BulletDamage : MonoBehaviour
         {
             Destroy(bullet);
         }
+        else if (collision.gameObject.tag == "BossLady")
+        {
+            Destroy(bullet);
+        }
     }
 }
