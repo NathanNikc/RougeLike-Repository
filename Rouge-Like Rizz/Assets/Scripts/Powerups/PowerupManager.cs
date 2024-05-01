@@ -11,10 +11,13 @@ public class PowerupManager : MonoBehaviour
     [SerializeField] private BulletDamageManager damageAdjust;
     [SerializeField] private BulletAim swordSwingPoint;
     static bool hasRing = false;
+    public bool hasRingPublic = false;
     static bool isUsingRing = false;
     static bool hasRage = false;
+    public bool hasRagePublic = false;
     static bool isUsingRage = false;
     static bool hasSword = false;
+    public bool hasSwordPublic = false;
     static bool isUsingSword = false;
     static bool hasBook = false;
     public float shootDelay = .5f;
@@ -61,6 +64,10 @@ public class PowerupManager : MonoBehaviour
         {
             shootDelay = .15f;
         }
+
+        hasRingPublic = hasRing;
+        hasRagePublic = hasRage;
+        hasSwordPublic = hasSword;
     }
 
     public void OnTriggerEnter2D(Collider2D other)

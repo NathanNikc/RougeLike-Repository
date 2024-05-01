@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class RizzOMeter : MonoBehaviour
 {
     public Image rizz;
-    static float rizzAmount = 0;
+    static float rizzAmount = 5000;
     private float rizzMax = 100000f;
     public float shareRizzAmount = rizzAmount;
 

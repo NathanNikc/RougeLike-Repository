@@ -13,8 +13,8 @@ public class RightDoor : MonoBehaviour
     public bool isInRange = false;
     private int lowRightScene = 8;
     private int topRightScene = 14;
-    static int doorsEntered = 0;
-    public float doorsEnteredPublic = 0;
+    static int doorsEntered;
+    public int doorsEnteredPublic;
 
     public void Start()
     {
@@ -46,7 +46,7 @@ public class RightDoor : MonoBehaviour
             }
             else if (Input. GetKey(KeyCode.E) && doorsEntered == 20) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
             {
-              //  SceneManager.LoadScene((MAKE THIS THE BOSSLADY SCENE), LoadSceneMode.Single);
+                SceneManager.LoadScene(26, LoadSceneMode.Single);
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
                 EInteractCanvas.enabled = false;
                 isInRange = false;
@@ -66,5 +66,6 @@ public class RightDoor : MonoBehaviour
     public void DoorCounter(int addDoor)
     {
         doorsEntered += addDoor;
+        doorsEnteredPublic = doorsEntered;
     }
 }

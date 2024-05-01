@@ -13,6 +13,7 @@ public class LeftDoor : MonoBehaviour
     public bool isInRange = false;
     private int lowLeftScene = 14;
     private int topLeftScene = 20;
+    public RightDoor doorCounter;
 
     public void Start()
     {
@@ -35,6 +36,14 @@ public class LeftDoor : MonoBehaviour
             if (Input.GetKey(KeyCode.E))
             {
                 SceneManager.LoadScene(sceneBuildIndex, LoadSceneMode.Single);
+                destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
+                EInteractCanvas.enabled = false;
+                isInRange = false;
+                doorCounter.DoorCounter(1);
+            }
+            else if (Input.GetKey(KeyCode.E) && doorCounter.doorsEnteredPublic == 20) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
+            {
+                SceneManager.LoadScene(26, LoadSceneMode.Single);
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
                 EInteractCanvas.enabled = false;
                 isInRange = false;

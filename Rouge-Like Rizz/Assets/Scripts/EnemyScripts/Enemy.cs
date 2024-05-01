@@ -20,6 +20,8 @@ public class Enemy : MonoBehaviour
     private AIPath AIPath;
     [SerializeField] 
     private EnemyHealthManager enemyHealthManager;
+    [SerializeField]
+    private RizzOMeter rizzOMeter;
 
     private GameObject player;
     private GameObject playerHealth;
@@ -31,6 +33,7 @@ public class Enemy : MonoBehaviour
         playerHealth = GameObject.FindGameObjectWithTag("Healer");
         playerController = player.GetComponent<PlayerController>();
         playerHealthManager = playerHealth.GetComponent<PlayerHealthManager>();
+        rizzOMeter = GameObject.FindGameObjectWithTag("RizzMeter").GetComponent<RizzOMeter>();
         AIPath = this.GetComponent<AIPath>();
         SetEnemyValues();
     }
@@ -53,6 +56,7 @@ public class Enemy : MonoBehaviour
         if (other.gameObject.name == "Player")
         {
             playerHealthManager.TakeDamage(damage);
+            rizzOMeter.LoseRizz(Random.Range(2500, 5000));
             playerController.GoInvincible();
         }
     }

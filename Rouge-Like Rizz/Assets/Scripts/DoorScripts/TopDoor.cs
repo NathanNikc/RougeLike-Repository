@@ -43,6 +43,13 @@ public class TopDoor : MonoBehaviour
                 isInRange = false;
                 doorCounter.DoorCounter(1);
             }
+            else if (Input.GetKey(KeyCode.E) && doorCounter.doorsEnteredPublic == 20) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
+            {
+                SceneManager.LoadScene(26, LoadSceneMode.Single);
+                destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
+                EInteractCanvas.enabled = false;
+                isInRange = false;
+            }
         }
     }
 
