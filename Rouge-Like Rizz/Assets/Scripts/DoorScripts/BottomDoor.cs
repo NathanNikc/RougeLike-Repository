@@ -2,6 +2,7 @@ using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -13,15 +14,13 @@ public class BottomDoor : MonoBehaviour
     public Canvas EInteractCanvas;
     public bool isInRange = false;
     private int lowBottomScene = 20;
-    private int topBottomScene = 26;
-    public RightDoor doorCounter;
+    private int topBottomScene = 27;
 
     public void Start()
     {
         sceneBuildIndex = Random.Range(lowBottomScene, topBottomScene);
         destinationSetter = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         EInteractCanvas.enabled = false;
-        doorCounter = GameObject.FindGameObjectWithTag("Door").GetComponent<RightDoor>();
     }
 
     public void Update()
@@ -41,16 +40,14 @@ public class BottomDoor : MonoBehaviour
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
                 EInteractCanvas.enabled = false;
                 isInRange = false;
-                doorCounter.DoorCounter(1);
-            }
-            else if (Input.GetKey(KeyCode.E) && doorCounter.doorsEnteredPublic == 20) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
-            {
-                SceneManager.LoadScene(26, LoadSceneMode.Single);
-                destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
-                EInteractCanvas.enabled = false;
-                isInRange = false;
+                DoorAddOne();
             }
         }
+    }
+
+    public void DoorAddOne()
+    {
+
     }
 
     private void OnTriggerExit2D(Collider2D other)

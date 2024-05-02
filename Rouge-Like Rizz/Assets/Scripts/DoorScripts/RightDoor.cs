@@ -1,6 +1,7 @@
 using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -14,20 +15,17 @@ public class RightDoor : MonoBehaviour
     private int lowRightScene = 8;
     private int topRightScene = 14;
     static int doorsEntered;
-    public int doorsEnteredPublic;
 
     public void Start()
     {
         sceneBuildIndex = Random.Range(lowRightScene, topRightScene);
         destinationSetter = GameObject.FindGameObjectWithTag("Enemy").GetComponent<AIDestinationSetter>();
         EInteractCanvas.enabled = false;
-        doorsEnteredPublic = doorsEntered;
     }
 
     public void Update()
     {
         Enemies = GameObject.FindGameObjectsWithTag("Enemy").Length;
-        doorsEnteredPublic = doorsEntered;
     }
 
     void OnTriggerStay2D(Collider2D other)
@@ -42,9 +40,9 @@ public class RightDoor : MonoBehaviour
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
                 EInteractCanvas.enabled = false;
                 isInRange = false;
-                DoorCounter(1);
+                DoorAddOne();
             }
-            else if (Input. GetKey(KeyCode.E) && doorsEntered == 20) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
+            else if (Input. GetKey(KeyCode.E) && doorsEntered == 15) //20 is just a random number, after playtesting, choose the number of rooms before the boss to make it resonable
             {
                 SceneManager.LoadScene(26, LoadSceneMode.Single);
                 destinationSetter.player = GameObject.FindGameObjectWithTag("Player");
@@ -54,6 +52,11 @@ public class RightDoor : MonoBehaviour
         }
     }
 
+    public void DoorAddOne()
+    {
+        doorsEntered += 1;
+    }
+
     private void OnTriggerExit2D(Collider2D other)
     {
         if (other.tag == "Player")
@@ -61,11 +64,5 @@ public class RightDoor : MonoBehaviour
             EInteractCanvas.enabled = false;
             isInRange = false;
         }
-    }
-
-    public void DoorCounter(int addDoor)
-    {
-        doorsEntered += addDoor;
-        doorsEnteredPublic = doorsEntered;
     }
 }

@@ -26,6 +26,7 @@ TagManager:
   - SwordPowerupIcon
   - BossLady
   - BossLadyHealthBar
+  - DoorCounter
   layers:
   - Default
   - TransparentFX

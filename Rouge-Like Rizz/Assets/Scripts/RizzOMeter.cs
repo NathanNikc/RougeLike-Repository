@@ -39,10 +39,6 @@ public class RizzOMeter : MonoBehaviour
     //holds almost-everything to do with healing
     public void RizzMeathods()
     {
-
-        Debug.Log("rizzTotal = " + rizzAmount);
-       
-
         if (Input.GetKeyDown(KeyCode.R))
         {
             GainRizz(1000f);

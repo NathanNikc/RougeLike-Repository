@@ -73,7 +73,6 @@ public class PlayerHealthManager : MonoBehaviour
         {
             Heal(20);
             healCounter -= 1;
-            Debug.Log("You have " + healCounter + " heals!");
         }
     }
 }
