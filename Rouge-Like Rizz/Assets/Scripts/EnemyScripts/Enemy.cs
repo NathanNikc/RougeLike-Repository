@@ -9,8 +9,6 @@ public class Enemy : MonoBehaviour
     [SerializeField]
     private float damage = 5f;
     [SerializeField]
-    private float speed = 1.5f;
-    [SerializeField]
     private EnemyData enemyData;
     [SerializeField]
     private PlayerController playerController;

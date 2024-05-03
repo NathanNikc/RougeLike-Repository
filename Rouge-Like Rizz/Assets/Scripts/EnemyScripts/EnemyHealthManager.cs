@@ -46,7 +46,7 @@ public class EnemyHealthManager : MonoBehaviour
     {
         if (enemyHealthAmount <= 0 && gameObject.tag == "Enemy")
         {
-            enemyKillCounter.GainRizz(5000);
+            enemyKillCounter.GainRizz(2000);
             Destroy(enemy);
         }
         else if (enemyHealthAmount <= 0 && gameObject.tag == "BossLady")

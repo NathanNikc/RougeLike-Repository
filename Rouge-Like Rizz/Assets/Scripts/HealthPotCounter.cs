@@ -20,6 +20,6 @@ public class HealthPotCounter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        amount.text = "x" + healthManager.healCounter;
+        amount.text = "x" + healthManager.healCounterPublic;
     }
 }

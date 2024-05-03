@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,7 +14,8 @@ public class PlayerHealthManager : MonoBehaviour
     private float healthMax = 150f;
     private GameObject player;
     public bool hasHeal = false;
-    public int healCounter;
+    static int healCounter;
+    public int healCounterPublic;
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +27,8 @@ public class PlayerHealthManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        healCounterPublic = healCounter;
+        
         HealMeathods();
     }
 
@@ -44,6 +48,7 @@ public class PlayerHealthManager : MonoBehaviour
     public void PickUpPot()
     {
         healCounter += 1;
+        healCounterPublic += 1;
     }
 
     //holds almost-everything to do with healing
@@ -73,6 +78,7 @@ public class PlayerHealthManager : MonoBehaviour
         {
             Heal(20);
             healCounter -= 1;
+            healCounterPublic -= 1;
         }
     }
 }

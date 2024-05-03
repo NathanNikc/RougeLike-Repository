@@ -26,10 +26,10 @@ public class BossLady : MonoBehaviour
     [SerializeField] Transform groundCheckWall;
     [SerializeField] float groundCheckRadius;
     [SerializeField] LayerMask groundLayer;
-    private bool isTouchingUp;
-    private bool isTouchingDown;
-    private bool isTouchingWall;
-    private bool goingUp = true;
+    public bool isTouchingUp;
+    public bool isTouchingDown;
+    public bool isTouchingWall;
+    public bool goingUp = true;
     private bool facingLeft = true;
     private Rigidbody2D enemyRb;
     private Animator enemyAnim;
@@ -51,10 +51,7 @@ public class BossLady : MonoBehaviour
         playerPosition = player.position - transform.position;
         playerPosition.Normalize();
         FlipTowardsPlayer();
-        if (Input.GetKeyDown(KeyCode.Space)) 
-        {
-            AttackPlayer();
-        } 
+        idleState();
     }
 
     void RandomStatePicker()
