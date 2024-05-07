@@ -2449,6 +2449,59 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &1507169017
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1507169018}
+  - component: {fileID: 1507169019}
+  m_Layer: 0
+  m_Name: SpawnManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1507169018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507169017}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.042, y: -0.138, z: 0.055183113}
+  m_LocalScale: {x: 0.28169012, y: 0.28169012, z: 0.28169012}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2001851870}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1507169019
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1507169017}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b6ff116799c70f4899a7b0946d71e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnRate: 5
+  enemyPrefabs:
+  - {fileID: 8318621459426122971, guid: e4858d251243b1e4cb3f57e38ad1af00, type: 3}
+  - {fileID: 7991547171038832774, guid: 0d4ae4f88d5cb1f48a51d4c348d518f3, type: 3}
+  - {fileID: 1725802938443678302, guid: 06106116d804619439b49e5d9546e4f3, type: 3}
+  - {fileID: 6160417009846375029, guid: 58c6f9850f5b82d4a8ce09bfb53ac326, type: 3}
+  - {fileID: 6075886372553763834, guid: f2ebe940d55207f45b8df36fa6c44bb4, type: 3}
+  - {fileID: 5926905929899363632, guid: dbf0debdc86ab444ca966489dbe24f8c, type: 3}
+  canSpawn: 1
 --- !u!1001 &1623539234
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2786,6 +2839,7 @@ Transform:
   - {fileID: 532319523}
   - {fileID: 36388535}
   - {fileID: 1101081617}
+  - {fileID: 1507169018}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2001851871
@@ -3810,7 +3864,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 5
-  speed: 1.5
   enemyData: {fileID: 0}
   playerController: {fileID: 0}
   playerHealthManager: {fileID: 0}

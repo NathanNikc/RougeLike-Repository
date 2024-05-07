@@ -1,6 +1,8 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class RizzOMeter : MonoBehaviour
@@ -56,6 +58,6 @@ public class RizzOMeter : MonoBehaviour
 
     public void HeartbreakEnding()
     {
-        return;
+        SceneManager.LoadScene(27, LoadSceneMode.Single);
     }
 }

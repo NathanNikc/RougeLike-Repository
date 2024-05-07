@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa8e09f60ef79fb408b33961cb78e339, type: 3}
-  m_Name: TankyEnemy
+  m_Name: Sentry
   m_EditorClassIdentifier: 
-  enemyHealth: 400
-  enemyDamage: 35
-  enemySpeed: 0.75
+  enemyHealth: 1000
+  enemyDamage: 50
+  enemySpeed: 0
