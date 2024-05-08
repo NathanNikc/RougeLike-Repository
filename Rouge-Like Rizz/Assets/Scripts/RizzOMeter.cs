@@ -53,6 +53,7 @@ public class RizzOMeter : MonoBehaviour
         if (rizzAmount <= 0)
         {
             HeartbreakEnding();
+            rizzAmount = 5000;
         }
     }
 

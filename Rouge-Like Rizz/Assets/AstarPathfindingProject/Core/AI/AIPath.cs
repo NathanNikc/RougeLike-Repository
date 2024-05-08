@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using Codice.Client.Common.GameUI;
 
 namespace Pathfinding {
 	using Pathfinding.RVO;

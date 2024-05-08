@@ -92,4 +92,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/HeartBreak.unity
     guid: 6cf023fc9304446438261fa017f06f78
+  - enabled: 1
+    path: Assets/Scenes/Ded.unity
+    guid: 80a004106a13ece459bd9ec9d92df885
+  - enabled: 1
+    path: Assets/Scenes/Winner.unity
+    guid: e75626ce5b99cd3469e0c738b838e9ef
   m_configObjects: {}

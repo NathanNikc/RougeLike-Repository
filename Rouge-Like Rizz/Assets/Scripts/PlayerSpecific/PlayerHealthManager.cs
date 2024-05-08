@@ -2,6 +2,7 @@ using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerHealthManager : MonoBehaviour
@@ -72,6 +73,8 @@ public class PlayerHealthManager : MonoBehaviour
         if (healthAmount <= 0)
         {
             Destroy(player);
+            SceneManager.LoadScene(28, LoadSceneMode.Single);
+            healthAmount = 150;
         }
 
         if (Input.GetKeyDown(KeyCode.Q) && hasHeal == true && healthAmount < healthMax)

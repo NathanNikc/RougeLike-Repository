@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class EnemyHealthManager : MonoBehaviour
@@ -53,6 +54,7 @@ public class EnemyHealthManager : MonoBehaviour
         {
             enemyKillCounter.GainRizz(20000);
             Destroy(enemy);
+            SceneManager.LoadScene(29, LoadSceneMode.Single);
         }
     }
 
