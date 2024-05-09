@@ -63,7 +63,7 @@ public class EnemyHealthManager : MonoBehaviour
         if (collision.gameObject.tag == "Bullet")
         {
             EnemyTakeDamage(damageFinder.bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
-            Destroy(bullet);
+           // Destroy(bullet);
         }
         else if (collision.gameObject.tag == "SwordShockwave")
         {

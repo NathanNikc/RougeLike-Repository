@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class BulletDamage : MonoBehaviour
 {
-    [SerializeField] private BulletDamageManager damageFinder;
+    [SerializeField] public BulletDamageManager damageFinder;
     [SerializeField] public GameObject bullet;
-    [SerializeField] private EnemyHealthManager takeDamageMeathod;
+    [SerializeField] public EnemyHealthManager takeDamageMeathod;
 
 
     // Start is called before the first frame update
@@ -23,15 +23,16 @@ public class BulletDamage : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             takeDamageMeathod.EnemyTakeDamage(damageFinder.bulletDamage); //calls on TakeDamage Meathod based on collision between bullet and enemy
-            Destroy(bullet);
+          //  Destroy(bullet);
         }
         else if (collision.gameObject.tag == "Obstacle")
         {
-            Destroy(bullet);
+          //  Destroy(bullet);
         }
         else if (collision.gameObject.tag == "BossLady")
         {
-            Destroy(bullet);
+         //   Destroy(bullet);
+         //   Destroy(bullet);
         }
     }
 }
